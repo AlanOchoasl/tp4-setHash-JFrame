@@ -28,6 +28,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane1 = new javax.swing.JOptionPane();
         pnlDatos = new javax.swing.JPanel();
         lblSesion = new javax.swing.JLabel();
         pnlingresarCredenciales = new javax.swing.JPanel();
@@ -36,16 +37,17 @@ public class Ejercicio1 extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
         jbtnVerificar = new javax.swing.JButton();
-        jbtnOcultar = new javax.swing.JButton();
-        jbtnVer = new javax.swing.JButton();
+        jbtnOCULTAR = new javax.swing.JButton();
+        jbtnVER = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Credenciales");
 
+        pnlDatos.setBackground(new java.awt.Color(0, 153, 255));
+
         lblSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSesion.setText("Inicio de sesion");
-
-        pnlingresarCredenciales.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese las credenciales"));
 
         txtUsuario.addActionListener(this::txtUsuarioActionPerformed);
 
@@ -55,6 +57,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
         lblContraseña.setText("Contraseña:");
 
+        jbtnVerificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pantalla-de-la-computadora.png"))); // NOI18N
         jbtnVerificar.setText("Verificar");
         jbtnVerificar.addActionListener(this::jbtnVerificarActionPerformed);
 
@@ -62,15 +65,6 @@ public class Ejercicio1 extends javax.swing.JFrame {
         pnlingresarCredenciales.setLayout(pnlingresarCredencialesLayout);
         pnlingresarCredencialesLayout.setHorizontalGroup(
             pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
-                        .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlingresarCredencialesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,8 +72,15 @@ public class Ejercicio1 extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57))
             .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(jbtnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jbtnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         pnlingresarCredencialesLayout.setVerticalGroup(
@@ -98,33 +99,56 @@ public class Ejercicio1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jbtnOCULTAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/oculto.png"))); // NOI18N
+        jbtnOCULTAR.setText("Ocultar");
+
+        jbtnVER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vision.png"))); // NOI18N
+        jbtnVER.setText("Ver");
+        jbtnVER.addActionListener(this::jbtnVERActionPerformed);
+
         javax.swing.GroupLayout pnlDatosLayout = new javax.swing.GroupLayout(pnlDatos);
         pnlDatos.setLayout(pnlDatosLayout);
         pnlDatosLayout.setHorizontalGroup(
             pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDatosLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDatosLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(lblSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pnlingresarCredenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(pnlingresarCredenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDatosLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jbtnOCULTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(jbtnVER, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDatosLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(lblSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         pnlDatosLayout.setVerticalGroup(
             pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDatosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(lblSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
+                .addComponent(lblSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlingresarCredenciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnVER, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnOCULTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
         );
 
-        jbtnOcultar.setText("Ocultar");
-        jbtnOcultar.addActionListener(this::jbtnOcultarActionPerformed);
-
-        jbtnVer.setText("Ver");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,24 +157,20 @@ public class Ejercicio1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(261, 261, 261))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jbtnOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(jbtnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(88, 88, 88)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                .addGap(123, 123, 123))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,9 +184,9 @@ public class Ejercicio1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void jbtnOcultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOcultarActionPerformed
+    private void jbtnVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVERActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnOcultarActionPerformed
+    }//GEN-LAST:event_jbtnVERActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,9 +214,11 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JOptionPane jOptionPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JButton jbtnOcultar;
-    private javax.swing.JButton jbtnVer;
+    private javax.swing.JButton jbtnOCULTAR;
+    private javax.swing.JButton jbtnVER;
     private javax.swing.JButton jbtnVerificar;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblSesion;
