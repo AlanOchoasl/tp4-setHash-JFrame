@@ -4,6 +4,8 @@
  */
 package Gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Educacion
@@ -33,7 +35,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
         lblSesion = new javax.swing.JLabel();
         pnlingresarCredenciales = new javax.swing.JPanel();
         txtUsuario = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pswContraseña = new javax.swing.JPasswordField();
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
         jbtnVerificar = new javax.swing.JButton();
@@ -49,9 +51,9 @@ public class Ejercicio1 extends javax.swing.JFrame {
         lblSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSesion.setText("Inicio de sesion");
 
-        txtUsuario.addActionListener(this::txtUsuarioActionPerformed);
+        pnlingresarCredenciales.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese las credenciales"));
 
-        jPasswordField1.setText("jPasswordField1");
+        txtUsuario.addActionListener(this::txtUsuarioActionPerformed);
 
         lblUsuario.setText("Usuario:");
 
@@ -69,7 +71,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57))
             .addGroup(pnlingresarCredencialesLayout.createSequentialGroup()
                 .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +95,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlingresarCredencialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jbtnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -101,6 +103,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
         jbtnOCULTAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/oculto.png"))); // NOI18N
         jbtnOCULTAR.setText("Ocultar");
+        jbtnOCULTAR.addActionListener(this::jbtnOCULTARActionPerformed);
 
         jbtnVER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vision.png"))); // NOI18N
         jbtnVER.setText("Ver");
@@ -123,7 +126,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
                     .addGroup(pnlDatosLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(lblSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         pnlDatosLayout.setVerticalGroup(
             pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +180,13 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVerificarActionPerformed
-        // TODO add your handling code here:
+       String mail=txtUsuario.getText();
+       String pass=new String(pswContraseña.getPassword());
+       if(mail.equals("alumno@ulp.edu.ar") && pass.equals("12345678")){
+           JOptionPane.showMessageDialog(this, "bienvenido a la aplicacion");
+       } else {
+           JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
+       }
     }//GEN-LAST:event_jbtnVerificarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
@@ -185,8 +194,12 @@ public class Ejercicio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void jbtnVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVERActionPerformed
-        // TODO add your handling code here:
+       pswContraseña.setEchoChar((char)0);
     }//GEN-LAST:event_jbtnVERActionPerformed
+
+    private void jbtnOCULTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOCULTARActionPerformed
+       pswContraseña.setEchoChar('*');
+    }//GEN-LAST:event_jbtnOCULTARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,7 +229,6 @@ public class Ejercicio1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JButton jbtnOCULTAR;
     private javax.swing.JButton jbtnVER;
     private javax.swing.JButton jbtnVerificar;
@@ -225,6 +237,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPanel pnlDatos;
     private javax.swing.JPanel pnlingresarCredenciales;
+    private javax.swing.JPasswordField pswContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
