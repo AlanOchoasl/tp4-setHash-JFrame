@@ -11,6 +11,8 @@ public class Tp3Laboratorio {
         Materia materia3  = new Materia (123, "Laboratorio 1", 1);
         
         //alumnos
+        Alumno alumno1 = new Alumno (1001, "Lopez", "Martin");
+        Alumno alumno2 = new Alumno (1002, "Martinez", "Brenda");
         
         
     }
