@@ -9,7 +9,7 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    private HashSet <String> materias = new HashSet <> ();
+    private HashSet <Materia> materias = new HashSet <> ();
     
     public Alumno (){
         
@@ -23,20 +23,27 @@ public class Alumno {
     }
     
     //Getters 
-    public int getLegajo (int legajo){return legajo;}
-    public String getApellido (String apellido){return apellido;}
-    public String getNombre (String nombre){return nombre;}
+    public int getLegajo (){return legajo;}
+    public String getApellido (){return apellido;}
+    public String getNombre (){return nombre;}
     
     //Setters
-    public void setLegajo (){this.legajo = legajo;}
-    public void setApellido (){this.apellido = apellido;}
-    public void setNombre (){this.nombre = nombre;}
+    public void setLegajo (int legajo){this.legajo = legajo;}
+    public void setApellido (String apellido){this.apellido = apellido;}
+    public void setNombre (String nombre){this.nombre = nombre;}
     
-    public void agregarMateria (){
+    public void agregarMateria (Materia materia){
+        
+       materias.add(materia);
         
     }
     
-    public void cantidadMaterias (){
+    public int cantidadMaterias (){
+        
+        int cantMaterias = materias.size();
+        
+        return cantMaterias;
+        
         
     }
 }
