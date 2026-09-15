@@ -1,19 +1,18 @@
 
 package tp3laboratorio;
 
-/**
- *
- * @author Charly Cimino
- * Aprendé más Java en mi canal: https://www.youtube.com/c/CharlyCimino
- * Encontrá más código en mi repo de GitHub: https://github.com/CharlyCimino
- */
 public class Tp3Laboratorio {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //materias
+        Materia materia1  = new Materia (123, "Web 2", 2);
+        Materia materia2  = new Materia (123, "Matematicas", 1);
+        Materia materia3  = new Materia (123, "Laboratorio 1", 1);
+        
+        //alumnos
+        
+        
     }
 
 }
