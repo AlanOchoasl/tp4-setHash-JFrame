@@ -1,9 +1,17 @@
 
 package tp3laboratorio;
 
+import GUI.Screen;
+
 public class Tp3Laboratorio {
 
     public static void main(String[] args) {
+        
+        //interface
+        Screen pantalla = new Screen ();
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
+        
         
         //materias
         Materia materia1  = new Materia (123, "Web 2", 2);
