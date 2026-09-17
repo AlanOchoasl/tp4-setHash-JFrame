@@ -4,8 +4,8 @@
  */
 package GUI;
 import java.util.HashSet;
-import tp3laboratorio.Alumno;
-import tp3laboratorio.Materia;
+import tp4laboratorio.Alumno;
+import tp4laboratorio.Materia;
 /**
  *
  * @author Charly Cimino
