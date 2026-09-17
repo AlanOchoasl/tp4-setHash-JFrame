@@ -1,5 +1,5 @@
 
-package tp3laboratorio;
+package tp4laboratorio;
 
 public class Materia {
 
@@ -29,6 +29,21 @@ public class Materia {
     public void setNombre (String nombre){this.nombre = nombre;}
     public void setAnio (int anio){this.anio = anio;}
     
+    @Override
+   public boolean equals(Object o){
+       if(this==o) return true;
+       if(o==null || getClass() != o.getClass())return false;
+       Materia materia=(Materia)o;
+       return idMateria== materia.idMateria;
+   }
+    @Override
+   public int hashCode(){
+       return java.util.Objects.hash(idMateria);
+       
+   }
+    
+    
     
     
 }
+
