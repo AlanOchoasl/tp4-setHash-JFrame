@@ -1,15 +1,14 @@
 
-package tp3laboratorio;
+package tp4laboratorio;
 
 import java.util.HashSet;
-import java.util.HashMap;
 
 public class Alumno {
 
     private int legajo;
     private String apellido;
     private String nombre;
-    private HashSet <Materia> materias = new HashSet <> ();
+    private HashSet <Materia> materias = new HashSet<>();
     
     public Alumno (){
         
