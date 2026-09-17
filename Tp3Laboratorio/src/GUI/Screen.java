@@ -3,18 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
-
+import java.util.HashSet;
+import tp3laboratorio.Alumno;
+import tp3laboratorio.Materia;
 /**
  *
  * @author Charly Cimino
  */
 public class Screen extends javax.swing.JFrame {
-    
+     public static HashSet<Alumno> alumnos= new HashSet <>();
+     public static HashSet<Materia> materias= new HashSet <>();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Screen.class.getName());
 
-    /**
-     * Creates new form Screen
-     */
+   
     public Screen() {
         initComponents();
     }
@@ -49,8 +50,18 @@ public class Screen extends javax.swing.JFrame {
         jInternalFrame1.setVisible(true);
 
         jm_Alumno.setText("Alumno");
+        jm_Alumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_AlumnoActionPerformed(evt);
+            }
+        });
 
         jmi_agregarAlumno.setText("Agregar alumno");
+        jmi_agregarAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarAlumnoActionPerformed(evt);
+            }
+        });
         jm_Alumno.add(jmi_agregarAlumno);
 
         jMenuBar1.add(jm_Alumno);
@@ -58,6 +69,11 @@ public class Screen extends javax.swing.JFrame {
         jm_Materia.setText("Materia");
 
         jmi_agregarMateria.setText("Agregar materia");
+        jmi_agregarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarMateriaActionPerformed(evt);
+            }
+        });
         jm_Materia.add(jmi_agregarMateria);
 
         jMenuBar1.add(jm_Materia);
@@ -147,8 +163,26 @@ public class Screen extends javax.swing.JFrame {
     }//GEN-LAST:event_jm_SalirActionPerformed
 
     private void jmi_InscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_InscripcionActionPerformed
-        // TODO add your handling code here:
+       VistaInscripcion inscriptos=new VistaInscripcion (alumnos, materias);
+       escritorio.add(inscriptos);
+       inscriptos.setVisible(true);
     }//GEN-LAST:event_jmi_InscripcionActionPerformed
+
+    private void jm_AlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_AlumnoActionPerformed
+      
+    }//GEN-LAST:event_jm_AlumnoActionPerformed
+
+    private void jmi_agregarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarAlumnoActionPerformed
+         VistaAlumno inscribir= new VistaAlumno (alumnos);
+       escritorio.add(inscribir);
+       inscribir.setVisible(true);
+    }//GEN-LAST:event_jmi_agregarAlumnoActionPerformed
+
+    private void jmi_agregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarMateriaActionPerformed
+        VistaMateria registrar= new VistaMateria (materias);
+        escritorio.add(registrar);
+        registrar.setVisible(true);
+    }//GEN-LAST:event_jmi_agregarMateriaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
