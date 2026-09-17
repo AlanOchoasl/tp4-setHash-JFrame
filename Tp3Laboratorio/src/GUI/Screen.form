@@ -95,11 +95,17 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Alumno"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jm_AlumnoActionPerformed"/>
+                      </Events>
                       <SubComponents>
                         <MenuItem class="javax.swing.JMenuItem" name="jmi_agregarAlumno">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Agregar alumno"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi_agregarAlumnoActionPerformed"/>
+                          </Events>
                         </MenuItem>
                       </SubComponents>
                     </Menu>
@@ -112,6 +118,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Agregar materia"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi_agregarMateriaActionPerformed"/>
+                          </Events>
                         </MenuItem>
                       </SubComponents>
                     </Menu>

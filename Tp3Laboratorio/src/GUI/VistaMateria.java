@@ -3,18 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package GUI;
-
+import java.util.HashSet;
+import tp3laboratorio.Materia;
 /**
  *
  * @author Charly Cimino
  */
 public class VistaMateria extends javax.swing.JInternalFrame {
-
+    private final HashSet<Materia> materias;
     /**
      * Creates new form VistaMateria
      */
-    public VistaMateria() {
+    public VistaMateria(HashSet <Materia> materias) {
         initComponents();
+        this.materias=materias;
     }
 
     /**

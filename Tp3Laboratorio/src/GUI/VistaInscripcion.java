@@ -3,18 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package GUI;
+import java.util.HashSet;
+import tp3laboratorio.Alumno;
+import tp3laboratorio.Materia;
 
 /**
  *
  * @author Charly Cimino
  */
 public class VistaInscripcion extends javax.swing.JInternalFrame {
-
+    private final HashSet<Alumno> alumnos;
+    private final HashSet <Materia> materias;
     /**
      * Creates new form VistaInscripcion
      */
-    public VistaInscripcion() {
+    public VistaInscripcion(HashSet <Alumno> alumnos, HashSet <Materia> materias) {
         initComponents();
+        this.alumnos=alumnos;
+        this.materias=materias;
     }
 
     /**

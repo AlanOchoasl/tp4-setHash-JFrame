@@ -3,18 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package GUI;
-
+import java.util.HashSet;
+import tp3laboratorio.Alumno;
 /**
  *
  * @author Charly Cimino
  */
 public class VistaAlumno extends javax.swing.JInternalFrame {
-
+    private final HashSet <Alumno> alumnos;
     /**
      * Creates new form VistaAlumno
      */
-    public VistaAlumno() {
+    public VistaAlumno(HashSet<Alumno> alumnos) {
         initComponents();
+        this.alumnos=alumnos;
+       
     }
 
     /**
@@ -108,7 +111,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txt_NombreActionPerformed
 
     private void txt_Apellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Apellido1ActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_txt_Apellido1ActionPerformed
 
 
