@@ -6,6 +6,7 @@ package GUI;
 import java.util.HashSet;
 import tp4laboratorio.Alumno;
 import tp4laboratorio.Materia;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,9 @@ import tp4laboratorio.Materia;
 public class VistaInscripcion extends javax.swing.JInternalFrame {
     private final HashSet<Alumno> alumnos;
     private final HashSet <Materia> materias;
+    
+    private final ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+    private final ArrayList<Materia> listaMaterias = new ArrayList<>();
     /**
      * Creates new form VistaInscripcion
      */
@@ -21,7 +25,42 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         initComponents();
         this.alumnos=alumnos;
         this.materias=materias;
+        cargarCombos();
+        
     }
+    
+    private void cargarCombos() {
+
+    opcion_Alumno.removeAllItems();
+    opcion_Materia.removeAllItems();
+
+    listaAlumnos.clear();
+    listaMaterias.clear();
+
+    listaAlumnos.addAll(alumnos);
+    listaMaterias.addAll(materias);
+
+    for (Alumno alumno : listaAlumnos) {
+        opcion_Alumno.addItem(
+                alumno.getLegajo()
+                + " - "
+                + alumno.getApellido()
+                + " "
+                + alumno.getNombre()
+        );
+    }
+
+    for (Materia materia : listaMaterias) {
+        opcion_Materia.addItem(
+                materia.getIdMateria()
+                + " - "
+                + materia.getNombre()
+        );
+    }
+
+    opcion_Alumno.setSelectedIndex(-1);
+    opcion_Materia.setSelectedIndex(-1);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,8 +93,18 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         opcion_Alumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btn_Inscribir.setText("Inscribir");
+        btn_Inscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InscribirActionPerformed(evt);
+            }
+        });
 
         salirInscribir.setText("Salir");
+        salirInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirInscribirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +152,60 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_InscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InscribirActionPerformed
+        int posicionAlumno = opcion_Alumno.getSelectedIndex();
+    int posicionMateria = opcion_Materia.getSelectedIndex();
+
+    if (posicionAlumno == -1 || posicionMateria == -1) {
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Debe seleccionar un alumno y una materia"
+        );
+
+        return;
+    }
+
+    Alumno alumnoSeleccionado =
+            listaAlumnos.get(posicionAlumno);
+
+    Materia materiaSeleccionada =
+            listaMaterias.get(posicionMateria);
+
+    int cantidadAnterior =
+            alumnoSeleccionado.cantidadMaterias();
+
+    alumnoSeleccionado.agregarMateria(
+            materiaSeleccionada
+    );
+
+    int cantidadActual =
+            alumnoSeleccionado.cantidadMaterias();
+
+    if (cantidadActual > cantidadAnterior) {
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Inscripción realizada correctamente.\n"
+                + "Alumno: "
+                + alumnoSeleccionado.getApellido()
+                + " "
+                + alumnoSeleccionado.getNombre()
+                + "\nMateria: "
+                + materiaSeleccionada.getNombre()
+                + "\nCantidad de materias: "
+                + cantidadActual
+        );
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "El alumno ya está inscripto en esa materia"
+        );
+    }
+    }//GEN-LAST:event_btn_InscribirActionPerformed
+
+    private void salirInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirInscribirActionPerformed
+        dispose();
+    }//GEN-LAST:event_salirInscribirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
