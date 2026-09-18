@@ -18,6 +18,14 @@ public class VistaMateria extends javax.swing.JInternalFrame {
         initComponents();
         this.materias=materias;
     }
+    
+    private void limpiarCampos (){
+        txt_Codigo.setText("");
+        txt_NombreMateria.setText("");
+        txt_AnioMateria.setText("");
+        
+        txt_Codigo.requestFocus();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,10 +60,25 @@ public class VistaMateria extends javax.swing.JInternalFrame {
         jLabel4.setText("Año");
 
         guardarMateria.setText("Guardar");
+        guardarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarMateriaActionPerformed(evt);
+            }
+        });
 
         nuevoMateria.setText("Nuevo");
+        nuevoMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoMateriaActionPerformed(evt);
+            }
+        });
 
         salirMateria.setText("Salir");
+        salirMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirMateriaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,6 +136,62 @@ public class VistaMateria extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nuevoMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoMateriaActionPerformed
+        limpiarCampos();
+    }//GEN-LAST:event_nuevoMateriaActionPerformed
+
+    private void salirMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirMateriaActionPerformed
+        dispose();
+    }//GEN-LAST:event_salirMateriaActionPerformed
+
+    private void guardarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarMateriaActionPerformed
+        if (txt_Codigo.getText().isBlank() || txt_NombreMateria.getText().isBlank() || txt_AnioMateria.getText().isBlank()) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Completá los campos"
+        );
+
+        return;
+    }
+
+    try {
+
+        int codigo = Integer.parseInt(txt_Codigo.getText());
+        String nombre = txt_NombreMateria.getText();
+        int anio = Integer.parseInt(txt_AnioMateria.getText());
+
+        Materia materia = new Materia(codigo, nombre, anio);
+
+        boolean agregada = materias.add(materia);
+
+        if (agregada) {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Materia guardada correctamente"
+            );
+
+            limpiarCampos();
+
+        } else {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "La materia ya existe"
+            );
+        }
+
+    } catch (NumberFormatException e) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Código y año deben ser números"
+        );
+    }
+        
+    }//GEN-LAST:event_guardarMateriaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

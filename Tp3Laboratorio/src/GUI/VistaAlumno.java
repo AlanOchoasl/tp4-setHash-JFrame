@@ -19,6 +19,14 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         this.alumnos=alumnos;
        
     }
+    
+    private void limpiarCampos (){
+        txt_Legajo.setText("");
+        txt_Apellido1.setText("");
+        txt_Nombre.setText("");
+        
+        txt_Legajo.requestFocus();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,10 +73,25 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         });
 
         guardarAlumno.setText("Guardar");
+        guardarAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarAlumnoActionPerformed(evt);
+            }
+        });
 
         nuevoAlumno.setText("Nuevo");
+        nuevoAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoAlumnoActionPerformed(evt);
+            }
+        });
 
         salirAlumno.setText("Salir");
+        salirAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirAlumnoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,6 +157,24 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     private void txt_Apellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Apellido1ActionPerformed
       
     }//GEN-LAST:event_txt_Apellido1ActionPerformed
+
+    private void nuevoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoAlumnoActionPerformed
+        limpiarCampos();
+    }//GEN-LAST:event_nuevoAlumnoActionPerformed
+
+    private void salirAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirAlumnoActionPerformed
+        dispose();
+    }//GEN-LAST:event_salirAlumnoActionPerformed
+
+    private void guardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAlumnoActionPerformed
+        int legajo = Integer.parseInt(txt_Legajo.getText());
+        String apellido = txt_Apellido1.getText();
+        String nombre = txt_Nombre.getText();
+        
+        Alumno alumno = new Alumno(legajo, apellido, nombre);
+        alumnos.add(alumno);
+        limpiarCampos();
+    }//GEN-LAST:event_guardarAlumnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
