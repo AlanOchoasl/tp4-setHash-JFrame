@@ -36,6 +36,9 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         txt_Legajo = new javax.swing.JTextField();
         txt_Apellido1 = new javax.swing.JTextField();
         txt_Nombre = new javax.swing.JTextField();
+        guardarAlumno = new javax.swing.JButton();
+        nuevoAlumno = new javax.swing.JButton();
+        salirAlumno = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setText("Formulario de Alumnos");
@@ -61,6 +64,12 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        guardarAlumno.setText("Guardar");
+
+        nuevoAlumno.setText("Nuevo");
+
+        salirAlumno.setText("Salir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,7 +89,14 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
                             .addComponent(txt_Apellido1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(guardarAlumno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nuevoAlumno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(salirAlumno)))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -100,7 +116,12 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txt_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(guardarAlumno)
+                    .addComponent(nuevoAlumno)
+                    .addComponent(salirAlumno))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -116,10 +137,13 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton guardarAlumno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton nuevoAlumno;
+    private javax.swing.JButton salirAlumno;
     private javax.swing.JTextField txt_Apellido1;
     private javax.swing.JTextField txt_Legajo;
     private javax.swing.JTextField txt_Nombre;
