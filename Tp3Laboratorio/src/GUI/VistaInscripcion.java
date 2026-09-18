@@ -37,6 +37,8 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         opcion_Materia = new javax.swing.JComboBox<>();
         opcion_Alumno = new javax.swing.JComboBox<>();
+        btn_Inscribir = new javax.swing.JButton();
+        salirInscribir = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jLabel1.setText("Formulario de Inscripcion");
@@ -50,6 +52,10 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         opcion_Materia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         opcion_Alumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btn_Inscribir.setText("Inscribir");
+
+        salirInscribir.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,6 +75,12 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                             .addGap(43, 43, 43)
                             .addComponent(opcion_Materia, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(43, 43, 43))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(btn_Inscribir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(salirInscribir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,7 +94,11 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(opcion_Alumno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 122, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Inscribir)
+                    .addComponent(salirInscribir))
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -90,10 +106,12 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Inscribir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JComboBox<String> opcion_Alumno;
     private javax.swing.JComboBox<String> opcion_Materia;
+    private javax.swing.JButton salirInscribir;
     // End of variables declaration//GEN-END:variables
 }
